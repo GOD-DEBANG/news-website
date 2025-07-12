@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
+    display: block;
+    animation: fadeInBody 1s ease-in-out; /* Add animation to the body */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Side Navigation */
+.side-nav {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    animation: slideInLeft 1s ease-in-out; /* Add 3D animation */
+}
+
+.side-nav.open {
+    left: 0;
+}
+
+.side-nav .logo {
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.side-nav .urban {
+    color: #ff0000; /* Red color for "Urban" */
+}
+
+.side-nav .rush {
+    color: #fff; /* White color for "Rush" */
+}
+
+.side-nav-links {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side-nav-links ul {
+    list-style: none;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.side-nav-links ul li {
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.3s;
+}
+
+.side-nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.side-nav-links ul li a:hover {
+    color: #ff6f61;
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+}
+
+/* Header */
+.header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: fadeInHeader 1s ease-in-out; /* Add animation to the header */
+}
+
+.header .burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.header .burger-menu .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.header .logo-center {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.header .logo {
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.header .logo:hover {
+    transform: scale(1.1);
+}
+
+.header .urban {
+    color: #ff0000; /* Red color for "Urban" */
+}
+
+.header .rush {
+    color: #fff; /* White color for "Rush" */
+}
+
+/* Animation Video */
+.animation-video {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+}
+
+.animation-video #bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.animation-video .overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeInOverlay 1s ease-in-out; /* Add animation to the overlay content */
+}
+
+.animation-video .overlay-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: slideInDown 0.5s forwards;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.animation-video .welcome {
+    color: #ff0000; /* Red color for "Welcome to" */
+}
+
+/* Start Button */
+.animation-video .start-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 20px; /* Make the font deeper */
+    font-weight: bold; /* Make the font deeper */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.5);
+}
+
+.animation-video .start-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%);
+}
+
+/* 3D Hover Effect for Text */
+h2, h1, p, a, li {
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+h2:hover, h1:hover, p:hover, a:hover, li:hover {
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeInFooter 1s ease-in-out; /* Add animation to the footer */
+}
+
+.footer .footer-links {
+    margin-bottom: 20px;
+}
+
+.footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer .footer-links a:hover {
+    color: #ff6f61;
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+}
+
+.footer .contact-details p {
+    margin: 10px 0;
+}
+
+.footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer .social-media a:hover {
+    color: #ff6f61;
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+}
+
+/* Urban Rush Logo on Sidebar */
+.side-nav-header .logo {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s, text-shadow 0.3s;
+    backdrop-filter: none; /* Remove blur effect */
+}
+
+.side-nav-header .logo .urban {
+    color: #ff0000; /* Red color for "Urban" */
+}
+
+.side-nav-header .logo .rush {
+    color: #fff; /* White color for "Rush" */
+}
+
+.side-nav-header .logo:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+}
+
+/* Keyframes for Animations */
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

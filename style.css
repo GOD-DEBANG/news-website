@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #3b3a30; /* Dark Charcoal */
+    --secondary-text-color: #7f7f7f; /* Sonic Silver */
+    --accent-color: #ff6f61; /* Bittersweet */
+    --accent-color-dark: #c94c4c; /* Dark Terra Cotta */
+    --background-color: #f8f0e3; /* Linen */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --hover-effect-color: rgba(255, 111, 97, 0.2);
+    --gradient-bg: linear-gradient(135deg, #ff6f61, #ffcccb); /* Bittersweet to Light Pink */
+    --vintage-border: 2px solid #8b7355; /* Vintage Brown */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+    background-image: url('https://w0.peakpx.com/wallpaper/413/871/HD-wallpaper-oldsmobile-ad-advertising-antique-car-cars-newspaper-oldsmobile-vintage.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 4px var(--shadow-color);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease;
+}
+
+nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    text-shadow: 2px 2px 4px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+    transform: scale(1.05);
+}
+
+.company-logo .rush {
+    color: var(--accent-color);
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px var(--shadow-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.hover-link:hover {
+    color: var(--accent-color);
+    background-color: var(--hover-effect-color);
+    transform: perspective(500px) rotateX(10deg) scale(1.1);
+}
+
+.hover-link:active {
+    color: var(--accent-color-dark);
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+    text-shadow: 1px 1px 2px var(--accent-color-dark);
+    transform: perspective(500px) rotateX(10deg);
+}
+
+/* Search Bar Styling */
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: var(--vintage-border);
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 0 4px var(--shadow-color);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.news-input:focus {
+    border-color: var(--accent-color);
+    transform: scale(1.02);
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 0 4px var(--shadow-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Country Select Styling */
+.country-select {
+    margin-left: 16px;
+}
+
+.country-select select {
+    height: 32px;
+    border: var(--vintage-border);
+    border-radius: 4px;
+    padding: 0 12px;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 0 4px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country-select select:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 1px 1px 8px var(--shadow-color);
+}
+
+/* Main Content Styling */
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Card Styling with 3D Animation */
+.card {
+    width: 100%;
+    max-width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px var(--shadow-color);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px var(--shadow-color);
+    background-color: #f9fdff;
+    transform: translateY(-2px) rotateY(10deg) scale(1.02);
+}
+
+/* Card Content */
+.card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+
+.news-source {
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    margin-bottom: 8px;
+}
+
+.news-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--primary-text-color);
+}
+
+.read-more {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.read-more:hover {
+    color: var(--accent-color-dark);
+    text-decoration: underline;
+}
+
+/* Loading Message */
+#loading-message {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+}
